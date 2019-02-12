@@ -10,6 +10,13 @@
 import mpSearchbar from 'mpvue-weui/src/searchbar'
 
 export default {
+
+  data () {
+    return {
+      placeholder: 'Hello World',
+      input: 'iiiii'
+    }
+  },
   components: {
     mpSearchbar
   }
