@@ -1,14 +1,32 @@
 {
   "pages": [
+    "pages/codeSearch/main",
     "pages/index/main",
     "pages/logs/main",
-    "pages/counter/main",
-    "pages/codeSearch/main"
+    "pages/counter/main"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+            "color": "#7A7E83",
+            "selectedColor": "#2AB62F",
+            "borderStyle": "black",
+            "backgroundColor": "#FFFFFF",
+            "list": [{
+                "pagePath": "pages/codeSearch/main",
+                "iconPath": "/static/images/trending.png",
+                "selectedIconPath": "/static/images/trending-selected.png",
+                "text": "Trending"
+            }, {
+                "pagePath": "pages/index/main",
+                "iconPath": "/static/images/rank.png",
+                "selectedIconPath": "/static/images/rank-selected.png",
+                "text": "Ranking"
+            }]
+        }
 }
