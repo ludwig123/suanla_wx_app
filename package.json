@@ -23,7 +23,6 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mpvue": "^1.0.11",
-    "mpvue-weui": "^1.0.4",
     "vue-eslint-parser": "^6.0.2",
     "vue-resource": "^1.5.1",
     "vuex": "^3.0.1"

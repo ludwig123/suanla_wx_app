@@ -11,7 +11,6 @@
     <div class="usermotto">
       <div class="user-motto">
         <card :text="motto"></card>
-        <mp-button type="default" size="large" btnClass="mb15">默认按钮</mp-button>
       </div>
     </div>
 
@@ -20,13 +19,11 @@
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-    <mp-button type="default" size="large" btnClass="mb15">默认按钮</mp-button>
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
-import mpButton from 'mpvue-weui/src/button'
 
 export default {
 
@@ -38,7 +35,6 @@ export default {
   },
 
   components: {
-    mpButton,
     card
   },
 

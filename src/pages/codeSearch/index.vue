@@ -1,7 +1,7 @@
 <template>
 	<div class="items-wrap">
 		<div class="show-search-bar">
-		<mp-searchbar :isFocus=true :inputValue="inputValue" :placeholder="placeholder" @input="input" @blur="blur" @focus="focus" @confirm="confirm"></mp-searchbar>
+
 		</div>
 
 		  <ul class="jithub-list">
@@ -100,7 +100,6 @@
 
 <script>
 import './index.less'
-import mpSearchbar from 'mpvue-weui/src/searchbar'
 import item from '@/components/item'
 import data from '../../data/code.json'
 
@@ -131,7 +130,6 @@ export default {
   },
 
   components: {
-    mpSearchbar,
     item
   },
 

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueResource from 'vue-resource'
-
-import 'mpvue-weui/src/style/weui.css'
+import '../static/weui.css'
 
 Vue.config.productionTip = false
 Vue.use(VueResource)
