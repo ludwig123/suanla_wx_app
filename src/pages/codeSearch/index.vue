@@ -17,7 +17,7 @@
         </div>
         <div class="weui-search-bar__cancel-btn" :hidden="!inputShowed" @click="hideInput">取消</div>
       </div>
-      <div class="weui-cells searchbar-result">
+     <div class="weui-cells searchbar-result">
         <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <div class="weui-cell__ft weui-cell__ft_in-access">
             <div class="item-name">
@@ -73,82 +73,34 @@
   </div>
 </template>
 
-
 <script>
 import './index.less'
-
-// 导入本地json数据文件
 import data from '../../data/code.json'
 
 export default {
-
   data () {
     return {
       inputShowed: false,
       inputVal: '',
-      count: 0,
-      placeholder: data['0']['金额'],
-      input: 'iiiii',
-      items: data,
-      code: data['0']['代码'],
-      money: data['0']['金额'],
-      score: data['0']['计分'],
-      content: data['0']['内容'],
-      nodes: [{
-        name: 'div',
-        attrs: {
-          class: 'div_class',
-          style: 'line-height: 60px; color: red;'
-        },
-        children: [{
-          type: 'text',
-          text: 'Hello&nbsp;World!'
-        }]
-      }]
+      placeholder: data['0']['代码']
     }
   },
-
-  components: {
-
-  },
-
   methods: {
-    enterRepo () {
-      console.log('clickHandle:')
-      // const { username, reponame } = repo
-      wx.navigateTo({
-        url: '../counter/main'
-      })
+    showInput () {
+      this.inputShowed = true
     },
-
-    getCodeList: function () {
-      console.log('id_getCodeList')
-      console.log(data)
-      this.$http.get('../code.json').then(function (response) {
-        console.log(response.data.data)
-        var resdata = response.data.data
-        this.peps = resdata
-      }).catch(function (response) {
-        console.log(response)
-        console.log('居然没有弹窗')
-      })
+    hideInput () {
+      this.inputVal = ''
+      this.inputShowed = false
+    },
+    clearInput () {
+      this.inputVal = ''
+    },
+    inputTyping (e) {
+      console.log(e)
+      this.inputVal = e.mp.detail.value
+      console.log('输入信息为：' + e.mp.detail.value)
     }
-  },
-
-  showInput () {
-    this.inputShowed = true
-  },
-  hideInput () {
-    this.inputVal = ''
-    this.inputShowed = false
-  },
-  clearInput () {
-    this.inputVal = ''
-  },
-  inputTyping (e) {
-    console.log(e)
-    this.inputVal = e.mp.detail.value
-    console.log('输入信息为：' + e.mp.detail.value)
   }
 }
 </script>
