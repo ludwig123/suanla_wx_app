@@ -17,72 +17,32 @@
         </div>
         <div class="weui-search-bar__cancel-btn" :hidden="!inputShowed" @click="hideInput">取消</div>
       </div>
-     <div class="weui-cells searchbar-result">
-        <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+     <div class="weui-cells searchbar-result" v-for="item in items">
+        <navigator :url="'../counter/main?'+item['代码']" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <div class="weui-cell__ft weui-cell__ft_in-access">
             <div class="item-name">
-              <h3>代码：<span>11111</span> 金额：<span>100元</span> 计分：<span>12分</span></h3>
+              <h3>代码：<span>{{item['代码']}}</span> 金额：<span>{{item['金额']}}</span> 计分：<span>{{item['计分']}}</span></h3>
             </div>
             <div class="item-content">
-              <p>内容：无有效机动车驾驶证驾驶摩托车、拖拉机、营运载客汽车以外的机动车的</p>
+              <h3>内容：</h3><p>{{item['内容']}}</p>
             </div>
           </div>
         </navigator>
-        <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__ft weui-cell__ft_in-access">
-            <div class="item-name">
-              <h3>代码：<span>11111</span> 金额：<span>100元</span> 计分：<span>12分</span></h3>
-            </div>
-            <div class="item-content">
-              <p>内容：无有效机动车驾驶证驾驶摩托车、拖拉机、营运载客汽车以外的机动车的</p>
-            </div>
-          </div>
-        </navigator>
-        <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__ft weui-cell__ft_in-access">
-            <div class="item-name">
-              <h3>代码：<span>11111</span> 金额：<span>100元</span> 计分：<span>12分</span></h3>
-            </div>
-            <div class="item-content">
-              <p>内容：无有效机动车驾驶证驾驶摩托车、拖拉机、营运载客汽车以外的机动车的</p>
-            </div>
-          </div>
-        </navigator>
-        <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__ft weui-cell__ft_in-access">
-            <div class="item-name">
-              <h3>代码：<span>11111</span> 金额：<span>100元</span> 计分：<span>12分</span></h3>
-            </div>
-            <div class="item-content">
-              <p>内容：无有效机动车驾驶证驾驶摩托车、拖拉机、营运载客汽车以外的机动车的</p>
-            </div>
-          </div>
-        </navigator>
-        <navigator url="../counter/main?title=navigate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-          <div class="weui-cell__ft weui-cell__ft_in-access">
-            <div class="item-name">
-              <h3>代码：<span>11111</span> 金额：<span>100元</span> 计分：<span>12分</span></h3>
-            </div>
-            <div class="item-content">
-              <p>内容：无有效机动车驾驶证驾驶摩托车、拖拉机、营运载客汽车以外的机动车的</p>
-            </div>
-          </div>
-        </navigator>
-      </div>
+      </div>     
     </div>
   </div>
 </template>
 
 <script>
 import './index.less'
-import data from '../../data/code.json'
+import items from '../../data/code.json'
 
 export default {
   data () {
     return {
       inputShowed: false,
       inputVal: '',
-      placeholder: data['0']['代码']
+      items: items
     }
   },
   methods: {
@@ -107,6 +67,7 @@ export default {
 
 <style scoped>
 .searchbar-result {
+  position: relative;
   margin-top: 0;
   font-size: 14px;
 }

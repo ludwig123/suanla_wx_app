@@ -106,6 +106,7 @@ icon {
 }
 
 .weui-cell__ft {
+  width: 100%;
   text-align: left;
   color: #999;
 }
