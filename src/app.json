@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/fixedAssets/main",
     "pages/codeSearch/main",
     "pages/index/main",
     "pages/logs/main",
